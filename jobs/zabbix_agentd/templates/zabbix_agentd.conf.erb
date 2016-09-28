@@ -1,0 +1,14 @@
+Server=<%= properties.zabbix.server_ip %>
+ServerActive=<%= properties.zabbix.server_ip %>
+Hostname=<%= name %>.<%= index %>
+HostMetadata=<%= properties.zabbix.host_metadata %>
+StartAgents=<%= properties.zabbix.start_agents %>
+RefreshActiveChecks=<%= properties.zabbix.refresh_active_checks %>
+SourceIP=<%= properties.zabbix.source_ip %>
+PidFile=/var/vcap/sys/run/zabbix_agentd/zabbix_agentd.pid
+LogFile=/var/vcap/sys/log/zabbix_agentd/zabbix_agentd.log
+<% if properties.zabbix.user_parameter %>
+<% p('zabbix.user_parameter').each do |param| %>
+UserParameter=<%= param %>
+<% end %>
+<% end %>

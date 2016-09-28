@@ -1,0 +1,32 @@
+#!/bin/bash
+
+RUN_DIR=/var/vcap/sys/run/zabbix_agentd
+LOG_DIR=/var/vcap/sys/log/zabbix_agentd
+PIDFILE=${RUN_DIR}/zabbix_agentd.pid
+
+case $1 in
+
+  start)
+    mkdir -p $RUN_DIR $LOG_DIR
+    chown -R vcap:vcap $RUN_DIR $LOG_DIR
+
+    cd /var/vcap/packages/zabbix_agentd
+
+    exec chpst -u vcap:vcap sbin/zabbix_agentd --config /var/vcap/jobs/zabbix_agentd/conf/zabbix_agentd.conf \
+      >>  $LOG_DIR/zabbix_agent.stdout.log \
+      2>> $LOG_DIR/zabbix_agent.stderr.log
+
+    ;;
+
+  stop)
+
+    kill `cat $PIDFILE`
+
+    rm -f $PIDFILE
+
+    ;;
+
+  *)
+    echo "Usage: ctl {start|stop}" ;;
+
+esac

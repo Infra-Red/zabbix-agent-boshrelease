@@ -1,0 +1,5 @@
+check process zabbix_agentd
+  with pidfile /var/vcap/sys/run/zabbix_agentd/zabbix_agentd.pid 
+  start program "/var/vcap/jobs/zabbix_agentd/bin/ctl start"
+  stop program "/var/vcap/jobs/zabbix_agentd/bin/ctl stop"
+  group vcap

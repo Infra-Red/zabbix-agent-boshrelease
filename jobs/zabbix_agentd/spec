@@ -1,0 +1,25 @@
+---
+name: zabbix_agentd
+templates:
+  ctl.erb: bin/ctl
+  zabbix_agentd.conf.erb: conf/zabbix_agentd.conf
+packages:
+  - zabbix_agentd
+properties:
+  zabbix.server_ip:
+    description: "IP address (or hostnames) of Zabbix server."
+    default: default.altoros.com
+  zabbix.host_metadata:
+    description: "Parameter that defines host metadata."
+    default: cf
+  zabbix.start_agents:
+    description: "Number of pre-forked instances of zabbix_agentd that process passive checks."
+    default: 0
+  zabbix.refresh_active_checks:
+    description: "How often list of active checks is refreshed, in seconds."
+    default: 300
+  zabbix.source_ip:
+    description: "Source IP address for outgoing connections."
+    default: 0.0.0.0
+  zabbix.user_parameter:
+    description: "User-defined parameter to monitor."

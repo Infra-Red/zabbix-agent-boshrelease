@@ -1,0 +1,8 @@
+---
+blobstore:
+  provider: s3
+  options:
+    bucket_name: zabbix-agent-boshrelease
+    region: us-west-2
+    endpoint: https://s3-us-west-2.amazonaws.com
+final_name: zabbix-agent
