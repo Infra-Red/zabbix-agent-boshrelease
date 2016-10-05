@@ -1,0 +1,20 @@
+---
+packages:
+- name: zabbix_agentd
+  version: 4ec2246c5b5ece15ed13a53aca79776cb3b8510f
+  fingerprint: 4ec2246c5b5ece15ed13a53aca79776cb3b8510f
+  sha1: 9db6d9118229ba96f4529867e2eafb9274430745
+  dependencies: []
+jobs:
+- name: zabbix_agentd
+  version: ba3209f462bb31d05da38034b179824ae9212895
+  fingerprint: ba3209f462bb31d05da38034b179824ae9212895
+  sha1: c72021202ef41cd5a4717db0304124c84458f48d
+license:
+  version: 8c21b236159106954a7030d16866594f6d36d1f4
+  fingerprint: 8c21b236159106954a7030d16866594f6d36d1f4
+  sha1: 5d58f86b50b6d269a598e0468b4246c5c0ec1ce7
+commit_hash: fdecab81
+uncommitted_changes: true
+name: zabbix-agent
+version: '1'
